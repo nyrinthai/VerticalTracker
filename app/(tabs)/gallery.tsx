@@ -1,33 +1,20 @@
-import { Link } from 'expo-router';
-import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, View } from 'react-native'
 
-export default function Home() {
+export default function gallery() {
   return (
     <View style={styles.container}>
-        <Text style={styles.title}>Vertical Tracker</Text>
-        <Text style={styles.subtitle}>Add a video to track your vertical!</Text>
-        <Image 
-            source={require('../../assets/images/yujinishida.jpg')} 
-            style={styles.image}
-        />
-        <Link href={{ pathname: '/(tabs)/camera' }} style={styles.button}>
-            <Text style={styles.buttonText}>Record Video</Text>
-        </Link>
-        <Link href={{ pathname: '/(tabs)/gallery' }} style={styles.button}>
-            <Text style={styles.buttonText}>View Gallery</Text>
-        </Link>
+      <Text style={styles.title}>gallery</Text>
     </View>
   )
 }
-
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'flex-start',
         padding : 20,
-        paddingTop : 50,
+        paddingTop : 75,
         alignItems: 'center',
         backgroundColor: '#fff',
     },
@@ -42,7 +29,6 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         textAlign: 'center',
     },
-
     button: {
         backgroundColor: '#007AFF',
         marginTop: 20,
