@@ -1,4 +1,5 @@
 import { CameraType, CameraView, useCameraPermissions, useMicrophonePermissions } from 'expo-camera';
+import { router } from 'expo-router';
 import { useRef, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
@@ -39,6 +40,10 @@ export default function CameraScreen() {
                 const video = await cameraRef.current.recordAsync();
                 if (video){
                     console.log('Video recorded:', video.uri);
+                    router.push({
+                        pathname: '/(tabs)/preview',
+                        params: { videoUri: video.uri },
+                    })
                 }
             } catch (error) {
                 console.error('Error recording video:', error);
