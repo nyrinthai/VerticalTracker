@@ -17,17 +17,21 @@ export default function preview() {
 
     function handleDone() {
         router.push({
-        pathname: '/processing',
+        pathname: '/mark',
         params: { videoUri }
         });
+        player.pause();
     }
+
 
     return (
         <View style={styles.container}>
             <VideoView
                 player = {player}
                 style ={styles.video}
-                allowsFullscreen
+                fullscreenOptions={{
+                    enable: true,
+                }}
                 allowsPictureInPicture
                 contentFit = "contain"
                 nativeControls

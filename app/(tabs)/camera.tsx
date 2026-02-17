@@ -27,7 +27,6 @@ export default function CameraScreen() {
     }
       
     function toggleCameraFacing() {
-        setIsCameraReady(false);
         setFacing(current => (current === 'back' ? 'front' : 'back'));
     }
 
